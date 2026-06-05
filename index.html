@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lucas Ferreira Design & Marketing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:#fff;
+height:100vh;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* FUNDO PREMIUM */
+body::before{
+content:'';
+position:fixed;
+width:700px;
+height:700px;
+background:radial-gradient(circle,#d89d1b22,transparent 70%);
+top:-200px;
+right:-200px;
+z-index:-1;
+}
+
+/* MENU LATERAL SIMPLES */
+.sidebar{
+position:fixed;
+left:15px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:999;
+}
+
+.sidebar a{
+text-decoration:none;
+color:white;
+background:#111;
+border:1px solid rgba(216,157,27,.25);
+padding:12px 16px;
+border-radius:12px;
+font-size:13px;
+font-weight:500;
+transition:.3s;
+white-space:nowrap;
+}
+
+.sidebar a:hover{
+background:#d89d1b;
+color:#000;
+transform:translateX(5px);
+}
+
+/* CARTÃO CENTRAL */
+.card{
+text-align:center;
+max-width:850px;
+padding:40px;
+}
+
+h1{
+font-size:64px;
+font-weight:800;
+line-height:1.1;
+}
+
+h1 span{
+color:#d89d1b;
+}
+
+.subtitle{
+margin-top:15px;
+font-size:22px;
+color:#d89d1b;
+font-weight:600;
+}
+
+.description{
+margin-top:25px;
+font-size:18px;
+line-height:1.8;
+color:#ddd;
+}
+
+/* BOTÃO PRINCIPAL */
+.cta{
+display:inline-block;
+margin-top:35px;
+padding:16px 38px;
+background:#d89d1b;
+color:#000;
+font-weight:700;
+border-radius:50px;
+text-decoration:none;
+transition:.3s;
+}
+
+.cta:hover{
+transform:scale(1.05);
+}
+
+/* MODAL SERVIÇOS */
+.overlay{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+z-index:1000;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#111;
+border:1px solid rgba(216,157,27,.4);
+padding:30px;
+border-radius:20px;
+max-width:600px;
+width:90%;
+z-index:1001;
+}
+
+.modal h2{
+color:#d89d1b;
+margin-bottom:20px;
+}
+
+.modal ul{
+list-style:none;
+}
+
+.modal ul li{
+padding:10px;
+margin-bottom:8px;
+background:#1a1a1a;
+border-left:4px solid #d89d1b;
+border-radius:8px;
+}
+
+.close{
+margin-top:20px;
+display:inline-block;
+padding:10px 20px;
+background:#d89d1b;
+color:#000;
+font-weight:700;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+
+h1{
+font-size:38px;
+}
+
+.sidebar{
+left:10px;
+}
+
+.sidebar a{
+font-size:12px;
+padding:10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU LATERAL -->
+<div class="sidebar">
+
+<a href="#" onclick="abrir()">☰ Serviços</a>
+
+<a href="https://wa.me/5551992033109" target="_blank">WhatsApp</a>
+
+<a href="https://instagram.com/fslucs" target="_blank">Instagram</a>
+
+<a href="mailto:lucfsv@gmail.com">E-mail</a>
+
+</div>
+
+<!-- CARTÃO CENTRAL -->
+<div class="card">
+
+<h1>
+Lucas Ferreira
+<br>
+<span>Design & Marketing</span>
+</h1>
+
+<p class="subtitle">
+Sua marca mais forte nas redes sociais
+</p>
+
+<p class="description">
+Criação de artes profissionais, banners, flyers e campanhas digitais
+para restaurantes, hamburguerias, lojas online e negócios locais.
+Transforme sua presença digital em clientes reais.
+</p>
+
+<a class="cta" href="https://wa.me/5551992033109" target="_blank">
+SOLICITAR ATENDIMENTO
+</a>
+
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="fechar()"></div>
+
+<!-- MODAL SERVIÇOS -->
+<div class="modal" id="modal">
+
+<h2>Serviços Oferecidos</h2>
+
+<ul>
+<li>Gestão de Redes Sociais</li>
+<li>Criação de Artes Profissionais</li>
+<li>Banners Publicitários</li>
+<li>Flyers Digitais</li>
+<li>Marketing Digital</li>
+<li>Divulgação para Negócios Locais</li>
+<li>Conteúdo para Instagram</li>
+<li>Identidade Visual</li>
+</ul>
+
+<div class="close" onclick="fechar()">Fechar</div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+
+function abrir(){
+document.getElementById('overlay').style.display='block';
+document.getElementById('modal').style.display='block';
+}
+
+function fechar(){
+document.getElementById('overlay').style.display='none';
+document.getElementById('modal').style.display='none';
+}
+
+</script>
+
+</body>
+</html>
